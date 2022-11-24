@@ -8,7 +8,7 @@ const ProductCategores = () => {
     useEffect(() => {
         axios.get("http://localhost:5000/categories").then((response) => {
             setData(response.data);
-        });
+        }).catch(error => { console.log(error) });
     }, []);
 
     console.log(data);

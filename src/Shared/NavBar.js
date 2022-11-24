@@ -10,7 +10,7 @@ const NavBar = () => {
             rounded={true}
         >
             <Link to='/'>
-                <h1 className="bg-gradient-to-r italic font-mono font-bold from-blue-600 via-red-600 to-blue-500 inline-block text-transparent bg-clip-text text-3xl">ReMart</h1>
+                <h1 className="bg-gradient-to-r  from-blue-600  to-blue-500 font-mono font-extrabold  inline-block text-transparent bg-clip-text text-3xl">ReMart</h1>
             </Link>
             <div className="flex md:order-2">
                 <Button className='hidden' gradientMonochrome="info">

@@ -36,7 +36,7 @@ const NavBar = () => {
                 </Button>
                 <Navbar.Toggle />
             </div>
-            <Navbar.Collapse>
+            <Navbar.Collapse className='ml-20'>
                 <Link
                     to='/home'>
                     Home

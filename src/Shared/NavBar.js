@@ -16,10 +16,16 @@ const NavBar = () => {
                 <Button className='hidden' gradientMonochrome="info">
                     Avater
                 </Button>
-                <Button className='hidden md:block mx-2' gradientMonochrome="info">
+                <Button className='hidden mx-2' gradientMonochrome="info">
                     <Link
                         to='/logout'>
                         Log Out
+                    </Link>
+                </Button>
+                <Button className='hidden md:block mx-2' gradientMonochrome="info">
+                    <Link
+                        to='/login'>
+                        Log in
                     </Link>
                 </Button>
                 <Button className='hidden md:block mx-2' gradientMonochrome="info">

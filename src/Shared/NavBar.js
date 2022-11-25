@@ -36,7 +36,7 @@ const NavBar = () => {
                 </Button>
                 <Navbar.Toggle />
             </div>
-            <Navbar.Collapse className='ml-20'>
+            <Navbar.Collapse className='flex justify-center'>
                 <Link
                     to='/home'>
                     Home
@@ -45,6 +45,24 @@ const NavBar = () => {
                     to='/blogs'>
                     Blogs
                 </Link>
+                <Button className='md:hidden my-1  mx-2' gradientMonochrome="info">
+                    <Link
+                        to='/logout'>
+                        Log Out
+                    </Link>
+                </Button>
+                <Button className='md:hidden my-1 mx-2' gradientMonochrome="info">
+                    <Link
+                        to='/login'>
+                        Log in
+                    </Link>
+                </Button>
+                <Button className='md:hidden my-1 mx-2' gradientMonochrome="info">
+                    <Link
+                        to='/register'>
+                        Register
+                    </Link>
+                </Button>
             </Navbar.Collapse>
         </Navbar>
     );

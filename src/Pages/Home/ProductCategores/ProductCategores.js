@@ -1,17 +1,25 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import CardSkeleton from './CategoryCard/CardSkeleton/CardSkeleton';
 import CategoryCard from './CategoryCard/CategoryCard';
 
 const ProductCategores = () => {
     const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    const skeletonData = [
+        { id: "1" },
+        { id: "2" },
+        { id: "3" },
+    ]
 
     useEffect(() => {
         axios.get("http://localhost:5000/categories").then((response) => {
             setData(response.data);
+            setLoading(false);
         }).catch(error => { console.log(error) });
     }, []);
 
-    console.log(data);
     return (
         <div>
             <div className="container mx-auto p-4 my-6 space-y-2 text-center">
@@ -19,7 +27,17 @@ const ProductCategores = () => {
             </div>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 mt-10 px-16'>
                 {
-                    data?.map(item => <CategoryCard key={item._id} item={item}></CategoryCard>)
+                    loading ? <>
+
+                        {
+                            skeletonData.map(data => <CardSkeleton key={data.id}></CardSkeleton>)
+                        }
+                    </> :
+                        <>
+                            {
+                                data?.map(item => <CategoryCard key={item._id} item={item}></CategoryCard>)
+                            }
+                        </>
                 }
             </div>
         </div>

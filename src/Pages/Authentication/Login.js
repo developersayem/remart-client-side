@@ -3,11 +3,21 @@ import { Button, Card, Label, TextInput } from 'flowbite-react';
 
 
 const Login = () => {
+
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+    }
+
     return (
         <div className="max-w-sm container mt-20 m-auto">
             <Card>
                 <h1 className='text-3xl font-bold'>Log In</h1>
-                <form className="flex flex-col gap-4">
+                <form onSubmit={handleLogin} className="flex flex-col gap-4">
                     <div>
                         <div className="mb-2 flex justify-start">
                             <Label
@@ -18,6 +28,7 @@ const Login = () => {
                         <TextInput
                             id="email1"
                             type="email"
+                            name='email'
                             placeholder="name@flowbite.com"
                             required={true}
                         />
@@ -32,6 +43,7 @@ const Login = () => {
                         <TextInput
                             id="password1"
                             type="password"
+                            name='password'
                             required={true}
                         />
                     </div>

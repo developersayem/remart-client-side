@@ -34,7 +34,7 @@ const SimpleFooter = () => {
                         by="ReMart™"
                         year={2022}
                     />
-                    <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+                    <div className="mt-4 flex space-x-6 sm:mt-0 sm:items-end sm:justify-center">
                         <Footer.Icon
                             className='hover:text-blue-500'
                             href="#"
@@ -63,7 +63,7 @@ const SimpleFooter = () => {
                     </div>
                 </div>
             </div>
-        </Footer>
+        </Footer >
     );
 };
 

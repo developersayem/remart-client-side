@@ -8,10 +8,18 @@ import ProductCategores from './ProductCategores/ProductCategores';
 const Home = () => {
     return (
         <div className=''>
-            <Banner></Banner>
-            <Feature></Feature>
-            <ProductCategores></ProductCategores>
-            <SimpleFooter></SimpleFooter>
+            <section>
+                <Banner></Banner>
+            </section>
+            <section>
+                <Feature></Feature>
+            </section>
+            <section>
+                <ProductCategores></ProductCategores>
+            </section>
+            <section>
+                <SimpleFooter></SimpleFooter>
+            </section>
         </div>
     );
 };

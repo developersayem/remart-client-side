@@ -3,7 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CategoryCard = ({ item }) => {
-    const { category_name, category_id, description, price_range } = item;
+    const { category_name, category_id, description, price_range, _id } = item;
+    console.log(_id);
     return (
         <Link to={`/category/${category_id}`}>
             <div className="max-w-sm">

@@ -1,7 +1,5 @@
 import { Accordion } from 'flowbite-react';
 import React from 'react';
-import { IconName } from "react-icons/fa";
-// HiOutlineArrowCircleDown
 
 const Blogs = () => {
     return (

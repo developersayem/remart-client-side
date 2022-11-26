@@ -4,9 +4,10 @@ import Main from '../../Layouts/Main/Main';
 import Login from '../../Pages/Authentication/Login';
 import Register from '../../Pages/Authentication/Register';
 import Blogs from '../../Pages/Blogs/Blogs';
-import ErrorPage from '../../Pages/ErrorPage/ErrorPage';
+import ErrorPage from '../../Pages/Home/ErrorPage/ErrorPage';
 import Home from '../../Pages/Home/Home';
-import Products from '../../Products/Products';
+import Products from '../../Pages/Products/Products';
+import PrivetRoute from '../Route/Private/PrivateRoute'
 
 
 export const router = createBrowserRouter([
@@ -36,7 +37,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/category/:id',
-                element: <Products></Products>,
+                element: <PrivetRoute><Products></Products></PrivetRoute>,
                 loader: async ({ params }) =>
                     fetch(
                         `https://assainment-12.vercel.app/category/${params.id}`

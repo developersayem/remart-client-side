@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Button, Card, Label, TextInput } from 'flowbite-react';
 import useTitle from '../../Hooks/useTitle';
 import { AuthContext } from '../../Contexts/UserContext';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 
 
@@ -35,7 +35,6 @@ const Register = () => {
     return (
         <div className="max-w-sm container mt-5 m-auto">
             <Card>
-                <Toaster />
                 <h1 className='text-3xl font-bold'>Register</h1>
                 <form onSubmit={handelRegister} className="flex flex-col gap-4">
                     <div>

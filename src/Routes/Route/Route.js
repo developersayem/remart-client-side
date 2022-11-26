@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
                 element: <Products></Products>,
                 loader: async ({ params }) =>
                     fetch(
-                        `http://localhost:5000/category/${params.id}`
+                        `https://assainment-12.vercel.app/category/${params.id}`
                     ),
             },
         ]

@@ -14,7 +14,7 @@ const ProductCategores = () => {
     ]
 
     useEffect(() => {
-        axios.get("http://localhost:5000/categories").then((response) => {
+        axios.get("https://assainment-12.vercel.app/categories").then((response) => {
             setData(response.data);
             setLoading(false);
         }).catch(error => { console.log(error) });

@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Card, Label, TextInput } from 'flowbite-react';
+import useTitle from '../../Hooks/useTitle';
+import { AuthContext } from '../../Contexts/UserContext';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 
 const Register = () => {
+
+    useTitle("Register")
+    const { creteUser, updateUser } = useContext(AuthContext)
+
+
     const handelRegister = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -10,13 +19,23 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const option = form.defaultRadio.value;
-        console.log(name, email, password, option)
+        creteUser(email, password)
+            .then(result => {
+                console.log(result);
+                form.reset();
+                toast.success("User Crete Successfully");
+                updateUser(name)
+                    .then((result) => console.log("done"))
+                    .catch((err) => console.error(err));
+            })
+            .catch(err => console.error(err));
     }
 
 
     return (
         <div className="max-w-sm container mt-5 m-auto">
             <Card>
+                <Toaster />
                 <h1 className='text-3xl font-bold'>Register</h1>
                 <form onSubmit={handelRegister} className="flex flex-col gap-4">
                     <div>
@@ -30,7 +49,7 @@ const Register = () => {
                             id="name"
                             type="text"
                             name='name'
-                            placeholder="flowbite"
+                            placeholder="Full Name"
                             required={true}
                         />
                     </div>
@@ -57,6 +76,7 @@ const Register = () => {
                             />
                         </div>
                         <TextInput
+                            autoComplete=''
                             id="password1"
                             type="password"
                             name='password'

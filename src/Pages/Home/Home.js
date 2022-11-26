@@ -1,11 +1,13 @@
 
 import React from 'react';
+import useTitle from '../../Hooks/useTitle';
 import SimpleFooter from '../../Shared/SimpleFooter/SimpleFooter';
 import Banner from './Banner/Banner';
 import Feature from './Feature/Feature';
 import ProductCategores from './ProductCategores/ProductCategores';
 
 const Home = () => {
+    useTitle("Home")
     return (
         <div className=''>
             <section>

@@ -9,7 +9,7 @@ const NavBar = () => {
     const { user, LogOut } = useContext(AuthContext);
 
     return (
-        <Navbar className="px-10 "
+        <Navbar className="px-10 top-0 z-20"
             fluid={true}
             rounded={true}
         >
@@ -22,7 +22,7 @@ const NavBar = () => {
                 </h1>
                 <Button
                     size="sm"
-                    className={`mx-2 ${user ? "md:block" : "hidden"}`} gradientMonochrome="info">
+                    className={`mx-2 hidden ${user ? "md:block" : "hidden"}`} gradientMonochrome="info">
                     <Link
                         onClick={LogOut}
                     >

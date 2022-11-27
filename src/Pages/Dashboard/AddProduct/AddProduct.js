@@ -1,18 +1,22 @@
-import { Button, Label, Textarea, TextInput } from 'flowbite-react';
-import React from 'react';
+import { Button, Label, Spinner, Textarea, TextInput } from 'flowbite-react';
+import React, { useState, useContext } from 'react';
 import { format } from 'date-fns';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../Contexts/UserContext';
 
 
 const AddProduct = () => {
-
+    const Navigate = useNavigate();
+    const [loading, setLoading] = useState(false)
+    const { user } = useContext(AuthContext);
     const time = new Date();
     const today = time.toLocaleTimeString();
     const date = format(time, "PP")
     const timeDate = `${date}-${today}`
 
 
-    const addProducts = (event) => {
+    const handeladdProducts = (event) => {
         event.preventDefault();
         const form = event.target;
         const model = form.model.value;
@@ -23,7 +27,8 @@ const AddProduct = () => {
         const location = form.location.value;
         const resale_price = form.resale_price.value;
         const original_price = form.original_price.value;
-        const seller_name = form.seller_name.value;
+        const seller_name = user.displayName;
+        const seller_email = user.email;
         const seeler_number = form.seeler_number.value;
         const posttime = timeDate;
         const img = form.img.value;
@@ -31,11 +36,11 @@ const AddProduct = () => {
         const years_of_used = form.years_of_used.value;
         const Conditions_type = form.conditions_type.value;
         const product = {
-            model, edition, img, category, category_id, description, location, resale_price, original_price, seller_name, seeler_number, posttime, years_of_used, Conditions_type, seller_verified
+            model, edition, seller_email, img, category, category_id, description, location, resale_price, original_price, seller_name, seeler_number, posttime, years_of_used, Conditions_type, seller_verified
         }
-        console.log(product)
+        setLoading(true)
 
-        fetch("http://localhost:5000/product", {
+        fetch("https://assainment-12.vercel.app/product", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -44,8 +49,8 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // Navigate('/');
-                console.log(data)
+                Navigate('/dashboard/myproducts');
+                setLoading(false);
                 toast.success("Product Add Successfully")
             })
     }
@@ -54,7 +59,7 @@ const AddProduct = () => {
     return (
         <div className='container mx-auto ml-5 mt-5 lg:ml-10 lg:mt-16'>
             <form
-                onSubmit={addProducts}
+                onSubmit={handeladdProducts}
                 className="flex flex-col gap-4 ">
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
                     <div>
@@ -121,7 +126,7 @@ const AddProduct = () => {
                             shadow={true}
                         />
                     </div>
-                    <div>
+                    {/* <div>
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="sellername"
@@ -136,7 +141,7 @@ const AddProduct = () => {
                             shadow={true}
                             name="sellername"
                         />
-                    </div>
+                    </div> */}
                     <div>
                         <div className="mb-2 block">
                             <Label
@@ -217,7 +222,7 @@ const AddProduct = () => {
                             shadow={true}
                         />
                     </div>
-                    <div className='col-span-2'>
+                    <div className='col-span-3'>
                         <div className="mb-2 block">
                             <Label
                                 htmlFor="description"
@@ -268,9 +273,20 @@ const AddProduct = () => {
                         </div>
                     </div>
                 </div>
-                <Button type="submit" gradientMonochrome='info' >
-                    Submit
-                </Button>
+                {
+                    loading ? <Button outline={true}>
+                        <div className="mr-3">
+                            <Spinner
+                                size="sm"
+                                light={true}
+                            />
+                        </div>
+                        Loading ...
+                    </Button> :
+                        <Button type="submit" gradientMonochrome='info' >
+                            Submit
+                        </Button>
+                }
             </form>
         </div>
     );

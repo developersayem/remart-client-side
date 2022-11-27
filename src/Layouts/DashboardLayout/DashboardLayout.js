@@ -3,22 +3,22 @@ import NavBar from '../../Shared/NavBar';
 import { HiMenuAlt3 } from "react-icons/hi";
 import { Link, Outlet } from "react-router-dom";
 import { Toaster } from 'react-hot-toast';
-
-import { FaCartPlus, FaPlus, FaUserAlt } from "react-icons/fa";
+import { FaCartPlus, FaPlus, FaUserFriends, FaBox, FaUsers } from "react-icons/fa";
 
 const DashboardLayout = () => {
     const menus = [
         { name: "My Orders", link: "/dashboard/myorders", icon: FaCartPlus },
         { name: "Add Product", link: "/dashboard/addproduct", icon: FaPlus },
-        { name: "All Seller", link: "/dashboard/allseller", icon: FaUserAlt },
-        { name: "All Buyer", link: "/dashboard/allbuyer", icon: FaUserAlt },
+        { name: "My Products", link: "/dashboard/myproducts", icon: FaBox },
+        { name: "All Seller", link: "/dashboard/allseller", icon: FaUserFriends },
+        { name: "All Buyer", link: "/dashboard/allbuyer", icon: FaUsers },
     ];
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     return (
         <div className="">
             <NavBar></NavBar>
             <Toaster />
-            <section className="flex gap-6 sticky z-0">
+            <section className="flex gap-0 md:gap-6 ">
                 <div
                     className={`bg-gradient-to-r from-sky-500 to-indigo-500 min-h-screen ${open ? "w-72" : "w-16"
                         } duration-500 text-gray-100 px-4`}

@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import CardSkeleton from '../../Shared/CardSkeleton/CardSkeleton';
 import ProductModal from './ProductModal/ProductModal';
 import ProductsCard from './ProductsCard/ProductsCard';
+
 
 const Products = () => {
     const data = useLoaderData();
     const [showModal, setShowModal] = useState(false);
     const [modalData, setModlaData] = useState([]);
+
+    const skeletonData = [
+        { id: "1" },
+        { id: "2" },
+        { id: "3" },
+    ]
+
 
     return (
         <div className="container mx-auto p-4 my-6 space-y-2 text-center">

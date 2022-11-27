@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion, Button, Card, Tooltip } from 'flowbite-react';
+import { Button, Card, Tooltip } from 'flowbite-react';
 import { FaCheckCircle } from "react-icons/fa";
 
 

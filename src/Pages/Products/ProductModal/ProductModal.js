@@ -71,30 +71,30 @@ const ProductModal = ({ showModal, setShowModal, modalData, setModlaData, }) => 
                                 <div className='p-16 pt-0 my-5 pb-0'>
 
                                     <form onSubmit={handleSubmit}>
-                                        <div class="grid gap-6 mb-6 md:grid-cols-2">
+                                        <div className="grid gap-6 mb-6 md:grid-cols-2">
                                             <div>
-                                                <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-                                                <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name='name' defaultValue={user?.displayName} placeholder="John" required disabled />
+                                                <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                                                <input type="text" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name='name' defaultValue={user?.displayName} placeholder="John" required disabled />
                                             </div>
                                             <div>
-                                                <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                                                <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name='email' defaultValue={user?.email} placeholder="Doe" required disabled />
+                                                <label htmlFor="last_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                                                <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name='email' defaultValue={user?.email} placeholder="Doe" required disabled />
                                             </div>
                                             <div>
-                                                <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Model Name</label>
-                                                <input type="text" id="model" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name='modelName' defaultValue={model} placeholder="Flowbite" required disabled />
+                                                <label htmlFor="company" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Model Name</label>
+                                                <input type="text" id="model" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name='modelName' defaultValue={model} placeholder="Flowbite" required disabled />
                                             </div>
                                             <div>
-                                                <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price -Tk</label>
-                                                <input type="text" id="model" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name='price' defaultValue={resale_price} placeholder="Flowbite" required disabled />
+                                                <label htmlFor="company" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price -Tk</label>
+                                                <input type="text" id="model" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name='price' defaultValue={resale_price} placeholder="Flowbite" required disabled />
                                             </div>
                                             <div>
-                                                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
-                                                <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name='phone' placeholder="123-45-678" required />
+                                                <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
+                                                <input type="tel" id="phone" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name='phone' placeholder="123-45-678" required />
                                             </div>
                                             <div>
-                                                <label for="website" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Meeting Place URL</label>
-                                                <input type="address" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name='place' placeholder="Dhaks,Bangladesh" required />
+                                                <label htmlFor="website" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Meeting Place URL</label>
+                                                <input type="address" id="website" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name='place' placeholder="Dhaks,Bangladesh" required />
                                             </div>
                                         </div>
                                         <div className='flex justify-center mt-5'>

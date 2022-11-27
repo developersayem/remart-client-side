@@ -3,7 +3,7 @@ import { Button, Card, Label, TextInput } from 'flowbite-react';
 import useTitle from '../../Hooks/useTitle';
 import { AuthContext } from '../../Contexts/UserContext';
 import toast from 'react-hot-toast';
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 
 
@@ -27,8 +27,6 @@ const Login = () => {
                 toast.success("logged in successfully");
                 form.reset();
                 const user = result.user
-                console.log(user);
-                console.log(user.email)
                 const currentUser = { email: user.email }
                 // jwt token
                 fetch("https://assainment-12.vercel.app/jwt", {
@@ -42,7 +40,6 @@ const Login = () => {
                     .then(data => {
                         //set jwt to local storage 
                         localStorage.setItem("token", data.token)
-                        console.log(data)
                     })
                 Navigate(from, { replace: true });
             })
@@ -95,6 +92,9 @@ const Login = () => {
                     <Button type="submit" gradientMonochrome="info">
                         Submit
                     </Button>
+                    <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
+                        Not registered? <Link to="/register" className="text-blue-700 hover:underline dark:text-blue-500">Create account</Link>
+                    </div>
                 </form>
                 <div className="divide font-semibold">OR</div>
                 <Button onClick={handelGoogle} gradientMonochrome="info">

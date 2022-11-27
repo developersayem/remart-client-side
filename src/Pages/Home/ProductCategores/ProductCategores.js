@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import CardSkeleton from './CategoryCard/CardSkeleton/CardSkeleton';
+import CardSkeleton from '../../../Shared/CardSkeleton/CardSkeleton';
 import CategoryCard from './CategoryCard/CategoryCard';
 
 const ProductCategores = () => {

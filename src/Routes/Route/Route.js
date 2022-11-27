@@ -1,9 +1,14 @@
 import React from 'react';
 import { createBrowserRouter } from "react-router-dom";
+import DashboardLayout from '../../Layouts/DashboardLayout/DashboardLayout';
 import Main from '../../Layouts/Main/Main';
 import Login from '../../Pages/Authentication/Login';
 import Register from '../../Pages/Authentication/Register';
 import Blogs from '../../Pages/Blogs/Blogs';
+import AddProduct from '../../Pages/Dashboard/AddProduct/AddProduct';
+import AllBuyer from '../../Pages/Dashboard/AllBuyer/AllBuyer';
+import AllSeller from '../../Pages/Dashboard/AllSeller/AllSeller';
+import MyOrders from '../../Pages/Dashboard/MyOrders/MyOrders';
 import ErrorPage from '../../Pages/Home/ErrorPage/ErrorPage';
 import Home from '../../Pages/Home/Home';
 import Products from '../../Pages/Products/Products';
@@ -44,9 +49,32 @@ export const router = createBrowserRouter([
                     ),
             },
         ]
-    }, {
+    },
+    {
         path: '*',
         element: <ErrorPage></ErrorPage>
+    },
+    {
+        path: '/dashboard',
+        element: <DashboardLayout></DashboardLayout>,
+        children: [
+            {
+                path: '/dashboard/myorders',
+                element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/dashboard/addproduct',
+                element: <AddProduct></AddProduct>
+            },
+            {
+                path: '/dashboard/allseller',
+                element: <AllSeller></AllSeller>
+            },
+            {
+                path: '/dashboard/allbuyer',
+                element: <AllBuyer></AllBuyer>
+            }
+        ]
     }
 ])
 

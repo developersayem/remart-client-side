@@ -93,7 +93,7 @@ const Login = () => {
                         Submit
                     </Button>
                     <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-                        Not registered? <Link to="/register" className="text-blue-700 hover:underline dark:text-blue-500">Create account</Link>
+                        Not registered? <Link to="/register" class="text-blue-700 hover:underline dark:text-blue-500">Create account</Link>
                     </div>
                 </form>
                 <div className="divide font-semibold">OR</div>

@@ -9,7 +9,7 @@ const NavBar = () => {
     const { user, LogOut } = useContext(AuthContext);
 
     return (
-        <Navbar className="mx-10"
+        <Navbar className="px-10 "
             fluid={true}
             rounded={true}
         >
@@ -17,7 +17,7 @@ const NavBar = () => {
                 <h1 className="bg-gradient-to-r  from-blue-600  to-blue-500 font-mono font-extrabold  inline-block text-transparent bg-clip-text text-3xl">ReMart</h1>
             </Link>
             <div className="flex md:order-2">
-                <h1 className='mt-1'>
+                <h1 className='mt-2 font-bold mr-5 sm:ml-10 text-sm'>
                     {user?.displayName}
                 </h1>
                 <Button
@@ -47,7 +47,7 @@ const NavBar = () => {
                 </Button>
                 <Navbar.Toggle />
             </div>
-            <Navbar.Collapse className='flex justify-center'>
+            <Navbar.Collapse className='flex justify-center mt-3 lg:ml-20'>
                 <Link
                     className='my-1  mx-2'
                     to='/home'>
@@ -57,6 +57,11 @@ const NavBar = () => {
                     className='my-1  mx-2'
                     to='/blogs'>
                     Blogs
+                </Link>
+                <Link
+                    className='my-1  mx-2'
+                    to='/dashboard'>
+                    Dashboard
                 </Link>
                 <Button
                     size="xs"

@@ -37,14 +37,15 @@ const UserContext = ({ children }) => {
 
 
   useEffect(() => {
-    const unSubcribe = onAuthStateChanged(auth, (currentUser) => {
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
 
     return () => {
-      unSubcribe();
+      unSubscribe();
     };
   }, []);
+
 
   const updateUser = (name, photoURL) => {
     return updateProfile(auth.currentUser, {

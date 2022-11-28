@@ -1,14 +1,18 @@
 import React from 'react';
-import TableData from '../../../Shared/TableData/TableData';
 import { useQuery } from '@tanstack/react-query';
-
+import SellerTableData from './SellerTableData/TableData'
 
 const AllSeller = () => {
     //load data by using tanstack query
 
     const { data: users = [], refetch } = useQuery({
         queryKey: ["products",],
-        queryFn: () => fetch(`https://assainment-12.vercel.app/allseller`).then(res => res.json())
+        queryFn: () => fetch(`https://assainment-12.vercel.app/allseller`,
+            {
+                headers: {
+                    authorization: `${localStorage.getItem("token")}`,
+                }
+            }).then(res => res.json())
     })
 
 
@@ -17,12 +21,12 @@ const AllSeller = () => {
             <h2 className="text-3xl font-bold mb-10">All Buyers</h2>
             <div>
                 {
-                    users?.map((data, index) => <TableData
+                    users?.map((data, index) => <SellerTableData
                         key={data._id}
                         data={data}
                         index={index}
                         refetch={refetch}
-                    ></TableData>)
+                    ></SellerTableData>)
                 }
             </div>
         </div>

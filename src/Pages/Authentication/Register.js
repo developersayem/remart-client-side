@@ -11,7 +11,7 @@ const Register = () => {
 
     const Navigate = useNavigate();
     useTitle("Register")
-    const { creteUser, updateUser } = useContext(AuthContext)
+    const { creteUser, updateUser, googleLogin } = useContext(AuthContext)
 
 
 
@@ -63,7 +63,11 @@ const Register = () => {
                 toast.success("save User Mongo Successfully");
                 Navigate('/');
             })
+    }
 
+    const handlegoogleLogin = () => {
+        googleLogin()
+        Navigate('/');
     }
 
 
@@ -140,8 +144,8 @@ const Register = () => {
                     <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                         Already registered? <Link to="/login" className="text-blue-700 hover:underline dark:text-blue-500">Log in</Link>
                     </div>
-                    <div className="divide font-semibold">OR</div>
-                    <Button type="submit" gradientMonochrome="info">
+                    <div className="divide text-center font-semibold">OR</div>
+                    <Button onClick={handlegoogleLogin} type="submit" gradientMonochrome="info">
                         Google
                     </Button>
                 </form>

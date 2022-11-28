@@ -41,7 +41,7 @@ const TableData = ({ data, index, refetch }) => {
                     Role
                 </Table.HeadCell>
                 <Table.HeadCell className='text-center'>
-                    Delete
+                    Verifyed
                 </Table.HeadCell>
             </Table.Head>
             <Table.Body className="divide-y">

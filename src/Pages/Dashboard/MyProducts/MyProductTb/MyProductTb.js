@@ -9,7 +9,7 @@ const MyProductTb = ({ product, refetch }) => {
 
     const handleSold = (id) => {
         const data = { status: "sold" };
-        fetch(`http://localhost:5000/myproduct/${id}`, {
+        fetch(`https://assainment-12.vercel.app/myproduct/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
@@ -27,7 +27,7 @@ const MyProductTb = ({ product, refetch }) => {
     }
     const handleUnSold = (id) => {
         const data = { status: "unsold" };
-        fetch(`http://localhost:5000/myproduct/${id}`, {
+        fetch(`https://assainment-12.vercel.app/myproduct/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
@@ -44,7 +44,7 @@ const MyProductTb = ({ product, refetch }) => {
     }
     const handleAdvertised = (id) => {
         const data = { advertised: "Advertised" };
-        fetch(`http://localhost:5000/myproduct/advertised/${id}`, {
+        fetch(`https://assainment-12.vercel.app/myproduct/advertised/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

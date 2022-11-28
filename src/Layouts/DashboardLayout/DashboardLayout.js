@@ -1,22 +1,54 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import NavBar from '../../Shared/NavBar';
 import { HiMenuAlt3 } from "react-icons/hi";
 import { Link, Outlet } from "react-router-dom";
 import { Toaster } from 'react-hot-toast';
 import { FaCartPlus, FaPlus, FaUserFriends, FaBox, FaUsers } from "react-icons/fa";
 import useTitle from "../../Hooks/useTitle";
+import { AuthContext } from "../../Contexts/UserContext";
+import axios from "axios";
 
 
 const DashboardLayout = () => {
-
     useTitle("Dashboard")
-    const menus = [
-        { name: "My Orders", link: "/dashboard/myorders", icon: FaCartPlus },
-        { name: "Add Product", link: "/dashboard/addproduct", icon: FaPlus },
-        { name: "My Products", link: "/dashboard/myproducts", icon: FaBox },
-        { name: "All Seller", link: "/dashboard/allseller", icon: FaUserFriends },
-        { name: "All Buyer", link: "/dashboard/allbuyer", icon: FaUsers },
-    ];
+    const [mongoUser, setMongoUser] = useState({})
+    const { user } = useContext(AuthContext)
+
+    useEffect(() => {
+        axios.get(`https://assainment-12.vercel.app/mongousers?email=${user?.email}`)
+            .then((response) => {
+                setMongoUser(response.data);
+            }).catch(error => { console.log(error) });
+    }, [user]);
+
+
+
+    const dbUserRole = mongoUser?.role;
+
+    const menus = [];
+
+    const myorders = { name: "My Orders", link: "/dashboard/myorders", icon: FaCartPlus };
+    const allseller = { name: "All Seller", link: "/dashboard/allseller", icon: FaUserFriends };
+    const allbuyer = { name: "All Buyer", link: "/dashboard/allbuyer", icon: FaUsers };
+    const addproduct = { name: "Add Product", link: "/dashboard/addproduct", icon: FaPlus };
+    const myproducts = { name: "My Products", link: "/dashboard/myproducts", icon: FaBox };
+
+
+    switch (dbUserRole) {
+        case "seller":
+            menus.push(addproduct, myproducts)
+            break;
+        case "buyer":
+            menus.push(myorders);
+
+            break;
+        case "admin":
+            menus.push(allbuyer, allseller);
+            break;
+        default:
+            { }
+    }
+
     const [open, setOpen] = useState(true);
     return (
         <div className="">

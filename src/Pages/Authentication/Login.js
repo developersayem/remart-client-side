@@ -15,7 +15,7 @@ const Login = () => {
     const from = location.state?.from?.pathname || "/";
 
 
-    const { LogInUser } = useContext(AuthContext);
+    const { LogInUser, googleLogin } = useContext(AuthContext);
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -46,12 +46,10 @@ const Login = () => {
             .catch(err => toast.error(err.message));
     }
 
-
-    const handelGoogle = () => {
-        toast("google")
-        console.log("handelGoogle")
+    const handlegoogleLogin = () => {
+        googleLogin()
+        Navigate('/');
     }
-
 
 
     return (
@@ -93,11 +91,11 @@ const Login = () => {
                         Submit
                     </Button>
                     <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-                        Not registered? <Link to="/register" class="text-blue-700 hover:underline dark:text-blue-500">Create account</Link>
+                        Not registered? <Link to="/register" className="text-blue-700 hover:underline dark:text-blue-500">Create account</Link>
                     </div>
                 </form>
-                <div className="divide font-semibold">OR</div>
-                <Button onClick={handelGoogle} gradientMonochrome="info">
+                <div className="divide text-center font-semibold">OR</div>
+                <Button onClick={handlegoogleLogin} gradientMonochrome="info">
                     Google
                 </Button>
             </Card>

@@ -13,7 +13,6 @@ const MyProducts = () => {
         queryKey: ["apointments", user],
         queryFn: () => fetch(`https://assainment-12.vercel.app/myproducts?email=${user?.email}`).then(res => res.json())
     })
-    console.log(products)
 
     return (
         <div className="container w-full mx-auto my-6 space-y-2 text-center sm:pr-5">

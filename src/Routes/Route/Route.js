@@ -8,6 +8,7 @@ import Blogs from '../../Pages/Blogs/Blogs';
 import AddProduct from '../../Pages/Dashboard/AddProduct/AddProduct';
 import AllBuyer from '../../Pages/Dashboard/AllBuyer/AllBuyer';
 import AllSeller from '../../Pages/Dashboard/AllSeller/AllSeller';
+import Dashboard from '../../Pages/Dashboard/Dashboard';
 import MyOrders from '../../Pages/Dashboard/MyOrders/MyOrders';
 import MyProducts from '../../Pages/Dashboard/MyProducts/MyProducts';
 import ErrorPage from '../../Pages/Home/ErrorPage/ErrorPage';
@@ -57,8 +58,13 @@ export const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>,
+        element: <PrivetRoute><DashboardLayout></DashboardLayout></PrivetRoute>,
+        loader: () => fetch(`https://assainment-12.vercel.app/categories`),
         children: [
+            {
+                path: '/dashboard',
+                element: <Dashboard></Dashboard>
+            },
             {
                 path: '/dashboard/myorders',
                 element: <MyOrders></MyOrders>

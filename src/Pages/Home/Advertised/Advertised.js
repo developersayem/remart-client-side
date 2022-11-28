@@ -5,11 +5,15 @@ import AdvertisedCard from './AdvertisedCard/AdvertisedCard';
 const Advertised = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/product/advertised`)
+        fetch(`https://assainment-12.vercel.app/product/advertised`,
+            {
+                headers: {
+                    authorization: `${localStorage.getItem("token")}`,
+                }
+            })
             .then(res => res.json())
             .then((data) => setProducts(data))
     }, [])
-    console.log(products)
 
     return (
         <div className="container my-16">

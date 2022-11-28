@@ -7,7 +7,12 @@ const AllBuyer = () => {
 
     const { data: users = [], refetch } = useQuery({
         queryKey: ["products",],
-        queryFn: () => fetch(`https://assainment-12.vercel.app/allbuyer`).then(res => res.json())
+        queryFn: () => fetch(`https://assainment-12.vercel.app/allbuyer`,
+            {
+                headers: {
+                    authorization: `${localStorage.getItem("token")}`,
+                }
+            }).then(res => res.json())
     })
 
     return (

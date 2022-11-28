@@ -1,10 +1,10 @@
-# <div align= "center">Graphical Store</div>
+# <div align= "center">ReMart</div>
 
-### Client Side Repo : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-devsayemmolla
+### Client Side Repo : https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-devsayemmolla
 
-## Server side repo : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-devsayemmolla/tree/main
+## Server side repo : https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-devsayemmolla
 
-### Live site : https://graphic-assainment-11.web.app/
+### Live site : https://remart-d1e3a.web.app/
 
 # Features & Functionality:-
 
@@ -12,8 +12,6 @@
 - On Time Delivery
 - Fast Delevary
 - Quality Control
-- World Wide
-- Customization Options
 
 # Thchnology Used:-
 
@@ -24,7 +22,7 @@
 - React Icons
 - Css
 - JWT
-- Teact-Toastify
+- React-Hot-Toast
 - Teact-Comfirmbox
 - MongoDB
-- Frameworks :- metarial tailwind
+- Css Frameworks :- Flowbite

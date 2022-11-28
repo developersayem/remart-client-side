@@ -1,13 +1,17 @@
-
 import React from 'react';
 import useTitle from '../../Hooks/useTitle';
 import SimpleFooter from '../../Shared/SimpleFooter/SimpleFooter';
+import Advertised from './Advertised/Advertised';
 import Banner from './Banner/Banner';
 import Feature from './Feature/Feature';
 import ProductCategores from './ProductCategores/ProductCategores';
 
+
+
 const Home = () => {
     useTitle("Home")
+
+
     return (
         <div className=''>
             <section>
@@ -18,6 +22,9 @@ const Home = () => {
             </section>
             <section>
                 <ProductCategores></ProductCategores>
+            </section>
+            <section>
+                <Advertised></Advertised>
             </section>
             <section>
                 <SimpleFooter></SimpleFooter>

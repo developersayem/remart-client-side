@@ -5,7 +5,6 @@ const Feature = () => {
     return (
         <section className="bg-white dark:bg-gray-900 mx-10">
             <div className="container px-6 py-10 mx-auto">
-                <h1 className="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">explore our <br /> awesome <span className="underline decoration-blue-500">Products</span></h1>
                 <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
                     <div className="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
                         <span className="inline-block text-3xl mb-5 text-blue-500 dark:text-blue-400">
@@ -63,7 +62,7 @@ const Feature = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

@@ -21,10 +21,12 @@ const ProductCategores = () => {
     }, []);
 
     return (
-        <div>
-            <div className="container mx-auto p-4 my-6 space-y-2 text-center">
-                <h2 className="text-5xl font-bold">Categories</h2>
+        <div className='container mt-16 '>
+            <h2 className="text-5xl font-bold text-center">Categories</h2>
+            <div className="container mx-auto p-4 my-6 space-y-2 ">
+                <h1 className="mx-16 text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">explore our <br /> awesome <span className="underline decoration-blue-500">Products</span></h1>
             </div>
+
             <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 mt-10 px-16'>
                 {
                     loading ? <>

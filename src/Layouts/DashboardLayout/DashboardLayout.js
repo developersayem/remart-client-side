@@ -4,8 +4,12 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { Link, Outlet } from "react-router-dom";
 import { Toaster } from 'react-hot-toast';
 import { FaCartPlus, FaPlus, FaUserFriends, FaBox, FaUsers } from "react-icons/fa";
+import useTitle from "../../Hooks/useTitle";
+
 
 const DashboardLayout = () => {
+
+    useTitle("Dashboard")
     const menus = [
         { name: "My Orders", link: "/dashboard/myorders", icon: FaCartPlus },
         { name: "Add Product", link: "/dashboard/addproduct", icon: FaPlus },
@@ -13,7 +17,7 @@ const DashboardLayout = () => {
         { name: "All Seller", link: "/dashboard/allseller", icon: FaUserFriends },
         { name: "All Buyer", link: "/dashboard/allbuyer", icon: FaUsers },
     ];
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     return (
         <div className="">
             <NavBar></NavBar>

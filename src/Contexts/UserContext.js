@@ -19,7 +19,6 @@ export const AuthContext = createContext();
 const auth = getAuth(app);
 const UserContext = ({ children }) => {
   const [user, setUser] = useState({});
-  const [mongoUser, setMongoUser] = useState({})
 
   const creteUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -95,9 +94,9 @@ const UserContext = ({ children }) => {
   };
 
 
-  const dbUserName = mongoUser?.name;
-  const dbUserEmail = mongoUser?.email;
-  const dbUserRole = mongoUser?.role;
+  // const dbUserName = mongoUser?.name;
+  // const dbUserEmail = mongoUser?.email;
+  // const dbUserRole = mongoUser?.role;
 
 
   const authInfo = {
@@ -107,9 +106,9 @@ const UserContext = ({ children }) => {
     LogOut,
     updateUser,
     googleLogin,
-    dbUserRole,
-    dbUserEmail,
-    dbUserName,
+    // dbUserRole,
+    // dbUserEmail,
+    // dbUserName,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

@@ -60,7 +60,6 @@ const Register = () => {
         })
             .then(res => res.json())
             .then(data => {
-                toast.success("save User Mongo Successfully");
                 Navigate('/');
             })
     }
@@ -145,10 +144,10 @@ const Register = () => {
                         Already registered? <Link to="/login" className="text-blue-700 hover:underline dark:text-blue-500">Log in</Link>
                     </div>
                     <div className="divide text-center font-semibold">OR</div>
-                    <Button onClick={handlegoogleLogin} type="submit" gradientMonochrome="info">
-                        Google
-                    </Button>
                 </form>
+                <Button onClick={handlegoogleLogin} type="submit" gradientMonochrome="info">
+                    Google
+                </Button>
             </Card>
         </div>
     );

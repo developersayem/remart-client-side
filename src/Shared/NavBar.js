@@ -58,11 +58,13 @@ const NavBar = () => {
                     to='/blogs'>
                     Blogs
                 </Link>
-                <Link
-                    className='my-1  mx-2'
-                    to='/dashboard'>
-                    Dashboard
-                </Link>
+                {
+                    user ? <Link
+                        className='my-1  mx-2'
+                        to='/dashboard'>
+                        Dashboard
+                    </Link> : null
+                }
                 <Button
                     size="xs"
                     className={`mx-2 my-1 ${user ? "md:hidden" : "hidden"}`} gradientMonochrome="info">

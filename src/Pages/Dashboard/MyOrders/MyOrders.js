@@ -8,7 +8,7 @@ const MyOrders = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://assainment-12.vercel.app?email=${user?.email}`,
+        fetch(`https://assainment-12.vercel.app/myorders?email=${user?.email}`,
             {
                 headers: {
                     authorization: `${localStorage.getItem("token")}`,

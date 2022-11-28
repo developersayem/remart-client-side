@@ -15,12 +15,18 @@ const DashboardLayout = () => {
     const { user } = useContext(AuthContext)
 
     useEffect(() => {
-        axios.get(`https://assainment-12.vercel.app/mongousers?email=${user?.email}`)
+        axios.get(`https://assainment-12.vercel.app/mongousers?email=${user?.email}`,
+            {
+                headers: {
+                    authorization: `${localStorage.getItem("token")}`,
+                }
+            })
             .then((response) => {
                 setMongoUser(response.data);
             }).catch(error => { console.log(error) });
-    }, [user]);
+    }, [user?.email]);
 
+    console.log(user)
 
 
     const dbUserRole = mongoUser?.role;
@@ -32,6 +38,7 @@ const DashboardLayout = () => {
     const allbuyer = { name: "All Buyer", link: "/dashboard/allbuyer", icon: FaUsers };
     const addproduct = { name: "Add Product", link: "/dashboard/addproduct", icon: FaPlus };
     const myproducts = { name: "My Products", link: "/dashboard/myproducts", icon: FaBox };
+
 
 
     switch (dbUserRole) {
